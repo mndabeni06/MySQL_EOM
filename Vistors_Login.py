@@ -19,7 +19,7 @@ img.place(x=0, y=0)
 class Database:
     def __init__(self, master):
         self.root = root
-        self.root.title('DataBase_LoginApp')
+        self.root.title('')
         self.root.geometry("500x360")
 
         self.username = Label(master, text="Please Enter Username", borderwidth=5)
@@ -47,14 +47,14 @@ class Database:
         if self.username_entry.get() == "" and self.password_entry.get() == "":
             messagebox.showerror("STATUS", "PLEASE ENTER VALID DETAILS")
         else:
-            hospital = mysql.connector.connect(user=' Life Choices Online', password='rutppuWASF', host='sql6.freesqldatabase.com',
-                                               database='Life Choices Online',
+            hospital = mysql.connector.connect(user='lifechoices', password='@Lifechoices1234', host='127.0.0.1',
+                                               database='lifechoicesonline',
                                                auth_plugin='mysql_native_password')
             mycursor = hospital.cursor()
-            xy = mycursor.execute('Select * from Login')
+            xy = mycursor.execute('Select * from users')
             for x in mycursor:
                 if x[1] == self.password_entry.get() and x[0] == self.username_entry.get():
-                    messagebox.showinfo("PERMISSION", "LOGIN SUCCESSFUL")
+                    messagebox.showinfo("PERMISSION", "SUCCESSFUL! Enjoy Your Day")
                     root.destroy()
             if x[1] != self.password_entry.get() or x[0] != self.username_entry.get():
                 messagebox.showerror("STATUS", "ACCESS DENIED")
@@ -67,9 +67,10 @@ class Database:
         if self.username_entry.get() == "" and self.password_entry.get() == "":
             messagebox.showerror("STATUS", "PLEASE ENTER VALID DETAILS")
         else:
-            reg = mysql.connector.connect(user='Life Choices Online', password='rutppuWASF', host='sql6.freesqldatabase.com',
-                                           database='Life Choices Online',
-                                           auth_plugin='mysql_native_password')
+            reg = mysql.connector.connect(user='sql6423129', password=' rutppuWASF', host='sql6.freesqldatabase.com',
+',
+                                          database='sql6423129',
+                                          auth_plugin='mysql_native_password')
 
             mycursor = reg.cursor()
             sql = "INSERT INTO Login (user, password) VALUE (%s, %s)"
