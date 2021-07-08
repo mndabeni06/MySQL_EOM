@@ -56,7 +56,7 @@ class Registration:
                 messagebox.showerror("STATUS", "PLEASE ENTER VALID DETAILS")
 
          else:
-            mydb = mysql.connector.connect(user='lifechoices', password='@Lifechoices1234', host='127.0.0.1',
+            mydb = mysql.connector.connect(user='lifechoices', password='@Lifechoices1234', host='localhost',
                                            database='LifechoicesOnline',
                                            auth_plugin='mysql_native_password')
             mycursor = mydb.cursor()
