@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234'
 
 root = Tk()
 root.title("AdminRights")
-root.geometry("1200x1200")
+root.geometry("1200x700")
 root.config(bg="#8dc63f")
 
 
@@ -66,91 +66,12 @@ def delete():
     messagebox.showinfo(title='STATUS', message='Successfully Deleted.')
 
 
-def update():
-    update_label = Label(root, text ='Update Record:')
-    update_label.place(x=750, y=350)
-    update_entry = Entry(root)
-    update_entry.place(x=860, y=350)
-    what_label = Label(root, text = 'Update: ')
-    what_label.place(x=750,y=400)
-    what_entry = Entry(root)
-    what_entry.place(x=860,y=400)
-    into_label = Label(root, text= 'update to:')
-    into_label.place(x=750, y=450)
-    into_entry = Entry(root)
-    into_entry.place(x=860,y=450)
-    update2 = Button(root, text ='update', command =update)
-    update2.place(x=870, y=500)
-
-    if update_entry.get() == 'name':
-        mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234', host = 'localhost', database = 'LifechoicesOnline', auth_plugin = 'mysql_native_password')
-        mycursor = mydb.cursor()
-        sql = "UPDATE Registration SET name = %s WHERE name = %s"
-        val = (into_entry.get(),what_entry.get())
-        mycursor.execute(sql,val)
-        mydb.commit()
-
-    elif update_entry.get() == 'surname':
-        mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234', host = 'localhost', database = 'LlifechoicesOnline', auth_plugin = 'mysql_native_password')
-        mycursor = mydb.cursor()
-        sql = "UPDATE Registration SET surname = %s WHERE surname = %s"
-        val = (into_entry.get(),what_entry.get())
-        mycursor.execute(sql,val)
-        mydb.commit()
-
-    elif update_entry.get() == 'phone_number':
-        mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234', host = 'localhost', database = 'LifechoicesOnline', auth_plugin = 'mysql_native_password')
-        mycursor = mydb.cursor()
-        sql = "UPDATE Registration SET phone_number = %s WHERE phone_number= %s"
-        val = (into_entry.get(),what_entry.get())
-        mycursor.execute(sql,val)
-        mydb.commit()
-
-    elif update_entry.get() == 'next_of_kin_name':
-        mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234', host = 'localhost', database = 'LifechoicesOnline', auth_plugin = 'mysql_native_password')
-        mycursor = mydb.cursor()
-        sql = "UPDATE next_of_kin_name SET next_of_kin_name = %s WHERE next_of_kin_name = %s"
-        val = (into_entry.get(),what_entry.get())
-        mycursor.execute(sql,val)
-        mydb.commit()
-
-    elif update_entry.get() == 'next_of_kin_mobile_number':
-        mydb = mysql.connector.connect(user='lifechoices', password = '@Lifechoices1234', host = 'localhost', database = 'LifechoicesOnline', auth_plugin = 'mysql_native_password')
-        mycursor = mydb.cursor()
-        sql = "UPDATE next_of_kin_mobile_number SET next_of_kin_mobile_number = %s WHERE next_of_kin_mobile_number = %s"
-        val = (into_entry.get(),what_entry.get())
-        mycursor.execute(sql,val)
-        mydb.commit()
-    else:
-        pass
-
-
-
-##def add_admin():
-    ##selected = trv.focus()
-    ##values = trv.item(selected,'values')
-   ## mydb = mysql.connector.connect(user='lifechoices', password = '@LifechoicesOnline1234', host = 'localhost', database = 'LifechoicesOnline', auth_plugin = 'mysql_native_password')
-   ## mycursor = mydb.cursor()
-   ## sql = "INSERT INTO Admin (Username, password) VALUES (%s, %s)"
-   ## val = (values[1],values[2],values[3],)
-   ## mycursor.execute(sql,val)
-   ## mydb.commit()
-   ## messagebox.showinfo(title='PERMISSION', message='ADMIN ADDED SUCCESSFULLY.')
-
 
 
 
 delete_btn = Button(root, text = 'Delete selected row', command = delete)
-delete_btn.place(x=850,y=800)
+delete_btn.place(x=850,y=600)
 
-update_btn = Button(root, text = 'Update', command = update)
-update_btn.place(x=870,y=900)
-
-#add_btn = Button(root, text = 'Add new user', command=add_admin)
-#add_btn.place(x=850, y=700)
-
-#logout_btn = Button(root, text = 'Logout user', command = logout_user)
-#logout_btn.place(x=850,y=600)
 
 exit_btn = Button(root, text = 'Go to main page', command = exit)
 exit_btn.place(x=850, y=500)

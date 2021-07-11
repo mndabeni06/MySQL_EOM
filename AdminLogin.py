@@ -13,7 +13,7 @@ class Admin:
     def __init__(self, master):
         self.root = root
         self.root.title('LoginWindow')
-        self.root.geometry("500x360")
+        self.root.geometry("700x400")
 
         self.Admin_username = Label(master, text="AdminUsername", borderwidth=5)
         self.Admin_username.place(x=5, y=5)

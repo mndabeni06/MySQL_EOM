@@ -9,7 +9,7 @@ class Registration:
     def __init__(self, master):
         self.master = master
         self.master.title('Lifechoices Online')
-        self.master.geometry('500x360')
+        self.master.geometry('700x400')
         self.master.configure(bg='#8dc63f')
 
 
