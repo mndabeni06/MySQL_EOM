@@ -4,7 +4,10 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 
 root = Tk()
-
+background_img = Image.open("background.png")
+bg_img = ImageTk.PhotoImage(background_img)
+img = Label(root, image=bg_img)
+img.place(x=0, y=0)
 root.config(bg="#8dc63f")
 
 

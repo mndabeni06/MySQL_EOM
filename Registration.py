@@ -1,6 +1,9 @@
 from tkinter import messagebox
 from tkinter import*
 import mysql.connector
+from PIL import Image, ImageTk
+
+
 reg = Tk()
 
 
