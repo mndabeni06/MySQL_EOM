@@ -10,7 +10,8 @@ class Registration:
         self.master = master
         self.master.title('Lifechoices Online')
         self.master.geometry('500x360')
-        self.master.configure(bg='#F49F1C')
+        self.master.configure(bg='#8dc63f')
+
 
 
         self.name = Label(master, text="Please Enter Your Fullname")
