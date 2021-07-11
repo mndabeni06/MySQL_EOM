@@ -79,7 +79,7 @@ exit_btn.place(x=850, y=500)
 
 def exit():
     root.destroy()
-    import Vistors_Login
+    import Visitors_Login
 
 
 
